@@ -9,9 +9,18 @@ public abstract class Usina {
         this.custoMWh = custoMWh;
     }
 
-    public abstract double calculaPrecoMWh(); //herdeiras vao implementar
-    public abstract String geraResumo();
+    @Override
+    public String toString() {
+        return "Usina{" +
+                "nome='" + nome + '\'' +
+                ", producaoMWh=" + producaoMWh +
+                ", custoMWh=" + custoMWh +
+                '}';
+    }
 
+    public abstract double calculaPrecoMWh(); //herdeiras vao implementar
+
+    public abstract String geraResumo();
 
     public String getNome() {
         return nome;
@@ -37,11 +46,11 @@ public abstract class Usina {
         this.custoMWh = custoMWh;
     }
 
-    public String getGeraResumo() {
+    /*public String getGeraResumo() {
         return geraResumo;
     }
 
     public void setGeraResumo(String geraResumo) {
         this.geraResumo = geraResumo;
-    }
+    }*/
 }

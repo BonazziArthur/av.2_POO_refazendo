@@ -50,11 +50,46 @@ public class ACMEEnergy {
     }
 
     public void inicializa() { //Pre-cadastramento
-
+        UsinaRenovavel usinaRenovavel1, usinaRenovavel2;
+        UsinaNaoRenovavel usinaNaoRenovavel1, usinaNaoRenovavel2;
     }
 
     private void cadastrarNovaUsina() {
 
     }
 
+    private void pesquisarUsinaNome() {
+        System.out.println("Insira o nome de uma usina para ver seus dados: ");
+        String nome = in.nextLine();
+        Usina usinaCadastrada = conglomerado.pesquisaUsina(nome);
+        if (usinaCadastrada == null) {
+            System.out.println("Nenhuma usina localizada com esse nome.");
+        } else {
+            if (usinaCadastrada instanceof UsinaRenovavel) {
+                System.out.println("Nome: " + usinaCadastrada.getNome());
+                System.out.println("Producao de MWh: " + usinaCadastrada.getProducaoMWh());
+                System.out.println("Custo MWh: " + usinaCadastrada.getCustoMWh());
+                System.out.println("Fonte de Energia utilizada: Renovavel - " + ((UsinaRenovavel) usinaCadastrada).getFonteDeEnergia());
+            } else {
+                System.out.println("Nome: " + usinaCadastrada.getNome());
+                System.out.println("Producao de MWh: " + usinaCadastrada.getProducaoMWh());
+                System.out.println("Custo MWh: " + usinaCadastrada.getCustoMWh());
+                System.out.println("Combustivel utilizado: " + ((UsinaNaoRenovavel) usinaCadastrada).getCombustivel());
+                System.out.println("Durabilidade do combustivel: " + ((UsinaNaoRenovavel) usinaCadastrada).getDurabilidadeCombustivel());
+            }
+        }
+
+    }
+
+    private void listarTodasUsinas() {
+
+    }
+
+    private void consultaPrecoMWhNome() {
+
+    }
+
+    private void salvarUsinasArquivo() {
+
+    }
 }
